@@ -73,5 +73,5 @@ Here, we would like to discuss sort of special app – wallet application becaus
 #### PoS variant
 We can also derivate a variant for this consensus, i.e. there is only type C. In this case, everybody can mine with their own stakes and it becomes pure PoS consensus. This variant system also can ensure the fairness and solves several issues under traditional PoS mode (refer to the section of “design intention”). Nevertheless, due to the wealth distribution issue which PoS mode can never escape, I personally prefer the original mode to construct the blockchain, because in term of the stake distribution, miners in type A and B also play important roles: thanks to those miners, they can help to complete the competition even though the users with low stake are not so positive. Generally speaking, users only need to vote once within 100 hours, it could make sure that the holding stakes would not miss the voting activities, which can basically avoid the unequal wealth distribution issue as discussed earlier.<br><br>
 
-to be updated...(or [Chinese version](/README.md))
+to be updated...(or [Chinese version](/README.md#收益分配))
 
