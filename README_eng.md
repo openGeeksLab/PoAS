@@ -51,6 +51,63 @@ Figure 1: nodes & network scheme illustration<br>
    **"Every time they publish a transaction, the stakeholders vote with their stake on the miners to generate a block and on the branches to be accepted as part of the main chain. The more stake a block or a miner get, the higher chance they win the competition."**<br>
 *(note1: to control the voting frequency, it is necessary to count the block gap when the last transaction arrives at current block in each account, and take a certain granularity, such as 10 blocks, as the adjustment coefficient. From zero, every unit time, the coefficient increases proportionally, and only after a long interval, like 6000 blocks, around 100 hours, coefficient can be restored to the maximum; also, the same adjustment coefficient will be added to each UTXO, and transaction frequency can adjust the number of stakes with the same approach and parameters as the former.)*<br>
 *(note2: the introduction of voting time granularity is to restrict the voting frequency, reduce relevant transactions when generating blocks, and increase validation rate of blocks and transactions.)*<br>
+(translated by \@nuszjj from [中文版](/README.md))
+## Project Introduction
+This project is aimed to build a set of blockchains with a new consensus protocol: Proof of network Dispersity, which could solve some common problems of existing POW and POS protocol to make it more environment friendly and fairer. On top of that, a series of blockchains with different tasks and functions will be established, necessary rewards will be distributed to developers within the protocol layer and simplify the business model of side-chain projects, which eventually makes this project as an open scalable system, and provides a safer, fairer and more flexible platform in the blockchain, especially cryptocurrency industry.<br>
+## Proof of network Dispersity
+*(Patent NO. CN2018102289423)*<br>
+### Design Background
+My initial design intention is to create an unduplicated proof of capability by making use of the feature of network lantency to realize POW consensus with low energy consumption.<br><br>
+The "Proof of work" protocol is being criticized because of the energy consumption. But regardless of the energy problem, POW is still the most essential and effective method of the blockchain system. With the logic of "able people should get more pay", proof-of-work is the first consensus protocol that makes a total decentralized system work. All of the other protocols are following the same logic, like Proof of Activity, Proof of Burn, Proof of Storage, Proof of Elasped Time, and so on. "Proof of stake" is the most popular one of them because it doesn’t need any external resources and consumes low energy by expanding the main logic from "able people should get more pay" to "rich people should get more pay", which makes the mining competition is only among the static inner states and there is no need for power consumption. But "POS" mode has its own flaw such as "nothing at stake" which can casue multiple voting problem, "stake grinding attack" and so on. An inevitable problem of "POS" is caused by the logic: "rich people should get more pay". Whenever the miners spend the same amount of time, the richer ones earn more, so that the rich miners tend to spend more time to work than others. In that case, the rich miners will gradually become richer and richer and this process will be ever-accelerated until there are only some richest users left in the system. By the way, some POS protocols offer "interests" to every stake holders to replace the mining process. It seems that they resolved the problem above but those protocols are vulnerable for lack of incentive to maintain the network.<br><br>
+The original intention of this article is to find another low energy consumption "proof of ability" to replace "proof of stake". Considering the following fact: because of the network lantency, you have to use as many distributed nodes as possible in order to pick up distributed information in the network as fast as possible. And this is a kind of "ability" that can't be improved by enhancing the performance of a single machine or using more electric power. But in the process of the designing, I realized that the "stake" property is essential and the best choice is to use both "ability" and "stake" at the same time and users will determine by themselves whether to use "stake" or "ability". Guide the users with appropriate profit distribution and it is possible to ensure the most fairness and safety.<br><br>
+### Benifits
+Compared with "POW" and "POS", this model has the following benefits: <br>
+* **No hashpower competition and no high-energy-consumption;** 
+* **No "nothing at stake" and "stake grinding" attack;**
+* **Optimize wealth distribution logic based on "stake" and replace all the inactive nodes with miners to maintain the network;**
+* **The new way of mining competition helps change the environment of App or website development and improve the user experience.**<br><br>
+*(note: Because this article is only discussing the situation of fully decentralized systems, protocols like "PBFT", "DPOS", "Ripple" will not be involved.)*<br><br>
+### Scenarios and Characters
+The whole network can be imagined as kind of scenario that the bee is gathering honey. There are 3 types of characters according to the node's functions.<br>
+1.	Flower node<br>
+Each node that broadcasts a transaction could be a Flower node which is mainly responsible for answering the request of Workers and voting for the main chain. The stake that a Flower node holds is seen as "Honey" in this scene and the amount of "Honey" will influence miner's competition.<br>
+
+2.	Honeycomb node<br>
+Honeycomb nodes are miners who have their own Workers gathering "honey" for them in the network. Honeycomb nodes use the "honey" they gathered to compete for generating blocks. Any user could be a Honeycomb node.<br>
+
+3.	Worker(bee) node<br>
+Workers are attached to Honeycombs in order to detect the Flowers nearby and send a "Honey-gather" request as soon as possible. The process that one Flower node answers the request from one Worker is seen as "Honey gathering".<br><br>
+
+The network scheme is shown as below:<br>
+![Alt text](/res/charactors.jpg)<br>
+Figure 1: nodes & network scheme illustration<br>
+
+### Consensus Process
+>1.	**Before publishing a transaction, a Flower node will broadcast a signal to preannounce it. The Workers nearby send "Honey gather" requests back when they detect the signal.**
+>2.	**After receiving the first request from a Worker, the Flower packs the main chain’s (about selecting the main chain, refer to the GHOST protocol) tail-block "b" and the address "m" of the Honeycomb who owns the Worker into the transaction structure , and then broadcasts the transaction. A successful "Honey gathering" is completed.**<br>
+*(note：We need to add those two 32-byte fields "b" and "m" to the transaction field. And a "balance" field is needed too if other place does not store stakes of the account.)*
+>3.	**This transaction is validated and packed into a new block by another miner, and then broadcasted in the network.**
+>4.	**When a Honeycomb receives a new block, he begins to validate it. At the same time, the Honeycomb checks the field "b"f and "m" of each transaction. Mark the transactions with "x" when their "m" fields point at the Honeycomb himself and mark them with "y" when   their "b" fields match the current chain’s tail-block.**
+>5.	**Equally divide the balance of each Flower between all of its transactions in that block.**
+>6.	**Add up the balances divided at the previous step of all the transactions marked with both "x" and "y" until the Honeycomb meets the target of generating a block. The result is denoted by "X" and the max number of statisticed blocks is 100.**<br>
+*(note: The "x" mark means the vote of generating blocks, but why we also need to check the "y" mark, refer to Chapter "[Cheats and Attacks]" Article 1.)*
+>7.	**Add up the divided balances of the transactions marked with "y" only in the current block and denote the result by "Y".**<br>
+*(note: The "y" mark means the vote of the main chain and there will be some adjustment about "Y", refer to Chapter "[Cheats and Attacks]" Article 2.)*
+>8.	**The Honeycomb is trying periodically to meet the target of generating a block with a mathematical operation based on constants such as timestamps and private signatures. That is denoted by: proofFunction() < target\*d\*X\*Y, "d" means the difficulty adjustment parameter. Other blocks received during that process, competing for the main chain, should be parallel processed. In order not to weaken the main chain, dthere is no need to stop competing for the current chain if the weight of main chain is less than the existing chain plus eight, and it actually follows its own benefits (possible to main chain).**<br>
+*(note: The trying frequency should be floating, refer to Chapter "[Cheats and Attacks]" Article 1.)*
+>9.	**After meeting the target of generating a block, the Honeycomb packs all of the transactions received during this period into a new block and broadcasts it. All of the "xy" marked transactions (coded within 100 blocks in order to save some space), profits of all nodes and other parameters should also be packed for verification. Mining rewards will be distributed proportionally between miners and all the flower nodes marked with xy.**<br>
+*(note: Profits distribution strategy is discripted in Chapter "[Profits Distribution]")*<br>
+*(note2: in terms of the extra storage space for validation parameters and reward distribution, it could be 2 more bites in the ID of each transaction and 4 more bites in the profit at maximum, which is fully acceptable; additional work of block validation is only going through the last 100 blocks, and it will not cause too much computation with proper algorithm.)*<br>
+
+<br>
+
+* For better understanding, the steps can be briefed as:<br>
+   **"The Honeycombs are constantly gathering honey all over the network and the result of the gathering is saved in the blocks. The probability of a Honeycomb wins the competition of generating a block is in proportion to the honey he gathered. The Flowers vote on the main chain with their stake every time they publish a transaction and the result is saved in blocks. The probability of a block to be accepted is in proportion to the stake voted for it."**<br>
+
+* Shorter description:<br>
+   **"Every time they publish a transaction, the stakeholders vote with their stake on the miners to generate a block and on the branches to be accepted as part of the main chain. The more stake a block or a miner get, the higher chance they win the competition."**<br>
+*(note1: to control the voting frequency, it is necessary to count the block gap when the last transaction arrives at current block in each account, and take a certain granularity, such as 10 blocks, as the adjustment coefficient. From zero, every unit time, the coefficient increases proportionally, and only after a long interval, like 6000 blocks, around 100 hours, coefficient can be restored to the maximum; also, the same adjustment coefficient will be added to each UTXO, and transaction frequency can adjust the number of stakes with the same approach and parameters as the former.)*<br>
+*(note2: the introduction of voting time granularity is to restrict the voting frequency, reduce relevant transactions when generating blocks, and increase validation rate of blocks and transactions.)*<br>
 *(note 3: to improve efficiency, we can add more transactions with pure voting, and users are able to decide whether they want to participate in the voting for the current transaction within the range of voting frequency.)*<br>
 
 <br>
