@@ -61,14 +61,19 @@ Figure 1: nodes & network scheme illustration<br>
 *(note 3: to improve efficiency, we can add more transactions with pure voting, and users are able to decide whether they want to participate in the voting for the current transaction within the range of voting frequency.)*<br>
 
 <br>
-The following diagrams show the principle about voting for block generation (x vote) and main chain (y vote) respectively:<br>
+The following diagram shows mining competition based on the network lanency:<br>
 
+![Alt text](/res/competition.jpg)<br>
+Figure 2: Process of competition for the flower nodes<br>
+As shown in the scheme above, the more online user an App has, the higher possibility it has to win the votes(stakes). Which will help the miner win the mining competition later.<br><br>
+
+The record of those votes will be packed in blocks. The following diagrams show the principle about competition of block generation (x vote) and main chain (y vote) respectively:<br>
 ![Alt text](/res/vote_on_x.jpg)<br>
-Figure 2: Process of block generation vote and validation<br>
+Figure 3: Process of block generation vote and validation<br>
 As shown in the scheme above, the system will count votes in certain existing blocks and the honeycomb with maximum votes can have the highest chance to win the competition.<br><br>
 
 ![Alt text](/res/vote_on_y.jpg)<br>
-Figure 3: Process of main chain vote and validation<br>
+Figure 4: Process of main chain vote and validation<br>
 As shown in the scheme above, whenever there is any fork, the transactions will also vote for the branch, which determines the number of votes (stakes) for different branches in the next voting, i.e. the amount of block generation difficulty parameter Y is determined. Thus, the more votes one branch can get, the faster it will be to generate the next block, and the faster broadcast is helpful to gain more votes in the next round. This process will increase the gap between these two branches and determine the main chain in short time.<br>
 
 <a id="anchor-01">The reason why separating the voting for mainchain and transaction record is because it could make stakes decide the branch individually. Because miners will only compete for votes of generating blocks, but votes for mainchain has none business with their income, which makes it not necessary to influence objective of the voting. In addition, it is difficult to control the users because they only need to vote their desired mainchain according to the blockchain data. So even if the users are quite centralized, it also can protect attack to branches effectively. The consensus protocol includes kind of incentive mechanism to the wallet program (refer to “[Wallet application](#wallet-application)” section for more details), which encourages users to select free competition and further ensure the stability of the mainchain.</a><br>
@@ -148,4 +153,3 @@ A：It makes simulation meaningless when we involve stakes in because nobody can
 A: Let's answer the question from two aspects. 1. We will try the best to ensure fair competition among the miners to avoid this centralized situation. See the section of "[Compete for the flower nodes](#compete-for-the-flower-nodes)" and "[Wallet application](#wallet-application)";2. We separate the voting of block generation and main china to make sure even if users are very centralized, it can also maintain the network security. 
 5. Q：Since the system uses voting mechanism, what is the difference between other voting protocol, like BFT?<br>
 A: First of all, the voting logical of BFT is to reach the consensus of "Majority wins", while the voting logical of PonD follows Satoshi Nakamoto's consensus logical which is "able people should get more pay". This is the most essential difference; Secondly, the BFT voting system is among few validation nodes, which is not full distribution system, but voting of PonD can be conducted in any of the nodes, it can be seen as completed distribution system like PoW.
-
