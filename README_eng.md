@@ -61,11 +61,11 @@ Figure 1: nodes & network scheme illustration<br>
 *(note 3: to improve efficiency, we can add more transactions with pure voting, and users are able to decide whether they want to participate in the voting for the current transaction within the range of voting frequency.)*<br>
 
 <br>
-The following diagram shows mining competition based on the network lanency:<br>
+The following diagram shows the mining competition based on the network lanency:<br>
 
 ![Alt text](/res/competition.jpg)<br>
 Figure 2: Process of competition for the flower nodes<br>
-As shown in the scheme above, the more online user an App has, the higher possibility it has to win the votes(stakes). Which will help the miner win the mining competition later.<br><br>
+As shown in the scheme above, the more online user an App has, the higher possibility it has of winning the votes(stakes). Which will help the miner win the mining competition later.<br><br>
 
 The record of those votes will be packed in blocks. The following diagrams show the principle about competition of block generation (x vote) and main chain (y vote) respectively:<br>
 ![Alt text](/res/vote_on_x.jpg)<br>
