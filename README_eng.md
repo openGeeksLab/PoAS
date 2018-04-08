@@ -109,18 +109,26 @@ The default transaction fee of different voting plans could be adjusted accordin
 
 ### Frauds and attacks
 1.	<a id="anchor-11">Filtered transaction, miners only pack the transactions which are beneficial to them.</a>
+
 Because the transactions included in each block could influence the competition environment, miners may want to gain more advantages through choosing some of the transactions.
+
 First of all, transactions in each block only take up small percentage of total amount, so there is little influence on the statistic results if some changes are made in one block. To solve this kind of problem better, we need to count the sum of stakes of all the flower nodes in this transaction, which will be used for next block generation interval. The higher stake it has, the shorter calculation period it will have, otherwise it is longer. E.g. if we make the calculation period between 0.9-1.1 secs, it would directly affect next block generation. In this case, it would be better choice for packing as many transactions as possible, which could disincentive the miner frauds. This parameter should be adjusted per the average value every once in a while.
+
 Maybe you have one doubt: why we need also refer to y when accumulating the stakes, not directly take x as reference? Of course, if we don’t take y, there would be no question, but it is hard to understand: it is meaningless by logic if we take account into the results of branches when counting the votes. However, there is one unique advantage to do like this. Nobody will get any revenue if they select wrong branch, which facilitate users to be more careful in the branch selection, not just make a choice anyway, or even give up. Although there may have some inaccurate statistics in this case, it could be neglected if compared with the benefits we discussed and there is also very low chance to get orphan block in practice.
 
 2.	<a id="anchor-12">It’s also filtered transaction, but the purpose is to influence the branch development speed.</a>
+
 Because the transactions included in each block will also decide the speed of next block generation in the same chain ( influence parameter Y), and attackers could decrease the transactions deliberately in certain branch to affect determination of the mainchain.
 Solution: In step 4 of the consensus process, when checking the transaction address b, other than marking the transaction at end of the current chain as y, we also need to mark the transaction that points to the current chain's countdown second, third (quantity adjustable) block, which is y1. Both y and y1 shall be counted when calculating the value of y. In this case, even though the attacker reduces the speed of certain block generation, it will compensate the deliberate missing block if only the latter miners are honest. All the transactions will point to the countdown second block and backwards.
+
 Another doubt may come out: is it possible to count transactions marked with xy1 when calculating X parameter? In this case, even though somebody makes fault during packing the transactions, there will be no effect on the results because the latter miners can make compensation for that. The answer is no because if we do like this, the nodes will evade the crucial point when there are branches and vote for the blocks before that to make sure they are critical. This can interfere the competition between branches, which makes it hard to determine the main chain promptly.
 
 3.	<a id="anchor-13">51% attack</a>
+
 If any user gains over 50% resources, they system will be totally under his control, which is the same with other algorithm. Here we would like to analyze which level of attack users can launch if under 45% resources.
+
 Let’s remain the same settings as before, the block generation period is 60s, stake recovery period is 6000 blocks interval, and averagely each block has 1/6000 stake of total blocks. In this case, we choose 100 blocks as statistic interval, so averagely in each block generation, there will be (1/6000)\*100=1/60 stake involved in the competition. Therefore, if you want to control the block generation, it only requires to put 1/120 stake in each block. For example, suppose one user has 50% stake and hold all of them longer than 100 hours, then he can make sure “double spend” attack within (50%)/(1/120)=6 blocks. In conclusion, if we have a significantly important transaction, wait one hour before we make the decision to ensure absolute safety.
+
 The statistic interval of 100 blocks is a very conservative design because we haven’t started deep research and experiments on data search algorithm. To prevent bottlenecks in verifying blocks and transactions, it is temporarily set as 100 blocks. In fact, according to existing database’s search rate, we estimate there is a lot of room for improvement with appropriate design. Suppose the statistic interval could be raised to 1000 blocks, the security of the system will increase by 10 times, and so on.
 
 4.	<a id="anchor-14">Simulate worker bee, i.e. try to create large number of worker bee nodes by simulation and add those virtual nodes to the p2p network to increase the probability of successful nectar extraction.</a>
