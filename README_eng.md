@@ -20,13 +20,13 @@ Compared with "POW" and "POS", this model has the following benefits: <br>
 ### Scenarios and Characters
 The whole network can be imagined as kind of scenario of canvassing. There are 3 types of characters according to the node's functions.<br>
 1.	Voter<br>
-Each node that broadcasts a transaction could be a Voter which is mainly responsible for answering the request of Workers and voting for the main chain. The stake that a Voter holds is seen as “votes” in this scene and the number of "votes" will influence miner's competition.<br>
+Each node that broadcasts a transaction could be a Voter which is mainly responsible for answering the request of Workers and voting for the main chain. The stake that a Voter holds is seen as “votes” in this scene and the number of "votes" will influence miner's competition.Any user could be a Voter.<br>
 
 2.	Miner<br>
 Miners have their own Workers canvassing “votes” for them throughout the network and use those votes to compete for generating blocks. Any user could be a Miner.<br>
 
 3.	Worker<br>
-Workers work for the Miners to detect the Voters nearby and send a “canvass” request as soon as possible. Workers are mostly running on terminals by being embedded into the client Apps or web browsers. <br><br>
+Workers work for the Miners to detect the Voters nearby and send a “canvass” request as soon as possible. Workers are mostly running on the network terminals by being embedded into the client Apps or web browsers.<br><br>
 
 The network scheme is shown as below:<br>
 ![Alt text](/res/charactors.jpg)<br>
