@@ -26,7 +26,7 @@ Each node that broadcasts a transaction could be a Voter which is mainly respons
 Miners have their own Workers canvassing “votes” for them throughout the network and use those votes to compete for generating blocks. Any user could be a Miner.<br>
 
 3.	Worker<br>
-Workers work for the Miners to detect the Voters nearby and send a “canvass” request as soon as possible. Workers are mostly running on the network terminals by being embedded into the client Apps or web browsers.<br><br>
+Workers work for the Miners to detect the Voters nearby and send a “canvass” request as soon as possible. Workers are mostly running on the network terminals by being embedded into the client Apps or web sources.<br><br>
 
 The network scheme is shown as below:<br>
 ![Alt text](/res/charactors.jpg)<br>
