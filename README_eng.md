@@ -1,4 +1,4 @@
-# PonD(Proof of network Dispersity) BlockChain Project
+# PoND(Proof of network Dispersity) BlockChain Project
 (translated by \@nuszjj from [中文版](/README.md))
 ## Project Introduction
 This project is aimed to build a set of blockchains with a new consensus protocol: Proof of network Dispersity, which could solve some common problems of existing POW and POS protocol to make it more environment friendly and fairer. On top of that, a series of blockchains with different tasks and functions will be established, necessary rewards will be distributed to developers within the protocol layer and simplify the business model of side-chain projects, which eventually makes this project as an open scalable system, and provides a safer, fairer and more flexible platform in the blockchain, especially cryptocurrency industry.<br>
@@ -142,7 +142,7 @@ So far, our plan is to get two chains, one of them is used to provide the most s
 
 ## FAQs
 1. Q: The system involves in stakes, is it a variant of PoS?<br>
-A: no, even though we use stake system, the key philosophy of PonD is to take advantage of network distribution to acquire user's voting, so the competition is through the capactities to achieve votes, but not the stakes. ([other differences](#anchor-03)->) Nevertheless, the PonD consensus can have the same effects with PoS after being simplified. Refer to the section of "[PoS variant](#pos-variant)" for more details.
+A: no, even though we use stake system, the key philosophy of PoND is to take advantage of network distribution to acquire user's voting, so the competition is through the capactities to achieve votes, but not the stakes. ([other differences](#anchor-03)->) Nevertheless, the PoND consensus can have the same effects with PoS after being simplified. Refer to the section of "[PoS variant](#pos-variant)" for more details.
 2. Q: If Miners collaborate with Voters, they can achieve votes without using network latency. Does it break the fairness of the competition easily?<br>
 A: The cooperation can indeed escape the competition of network latency. However, it doesn’t break the fairness because from the perspective of the ability to achieve votes, it is the same result with either network distribution or collaboration. Refer to the section of "[Compete for the Voters](#compete-for-the-voters)". 
 3. Q: Generally speaking, people may make frauds in the online voting with simulation. How can you prevent that?<br>
@@ -150,4 +150,4 @@ A：It makes simulation meaningless when we involve stakes in because nobody can
 4. Q: If somebody gathered a large number of users, will that affect the network security?<br>
 A: Let's answer the question from two aspects. 1. We will try the best to ensure fair competition among the miners to avoid this centralized situation. See the section of "[Compete for the Voters](#compete-for-the-voters)" and "[Wallet application](#wallet-application)";2. We separate the voting of block generation and main china to make sure even if users are very centralized, it can also maintain the network security,refer to [->](#anchor-01). 
 5. Q：Since the system uses voting mechanism, what is the difference between other voting protocol, like BFT?<br>
-A: First of all, the voting logical of BFT is to reach the consensus of "Majority wins", while the voting logical of PonD follows Satoshi Nakamoto's consensus logical which is "able people should get more pay". This is the most essential difference; Secondly, the BFT voting system is among few validation nodes, which is not full distribution system, but voting of PonD can be conducted in any of the nodes, it can be seen as completed distribution system like PoW.
+A: First of all, the voting logical of BFT is to reach the consensus of "Majority wins", while the voting logical of PoND follows Satoshi Nakamoto's consensus logical which is "able people should get more pay". This is the most essential difference; Secondly, the BFT voting system is among few validation nodes, which is not full distribution system, but voting of PoND can be conducted in any of the nodes, it can be seen as completed distribution system like PoW.
