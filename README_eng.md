@@ -13,7 +13,7 @@ The purpose of this article is to find another low energy consumption proof of a
 Compared with "POW" and "POS", this model has the following benefits: <br>
 * **No hashpower competition and no high-energy-consumption;** [→](#anchor-02)
 * **No "nothing at stake" and "stake grinding" attack;**[→](#anchor-03)
-* **Optimized wealth distribution based on "stake" and Miners replace all the inactive users to maintain the network;**[→](#anchor-04)
+* **Provide enough incentive to maintain the network without wealth concentration problem;**[→](#anchor-04)
 * **The new way of mining competition helps change the environment of App or website development and improve the user experience of them.**[→](#anchor-05)<br>
 
 *(note: Because this article is only discussing the situation of fully decentralized systems, protocols like "PBFT", "DPOS", "Ripple" will not be involved.)*<br><br>
