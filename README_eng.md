@@ -1,8 +1,8 @@
-# PoND(Proof of network Dispersity) BlockChain Project
+# PoND(Proof of Network Dispersity) BlockChain Project
 (translated by \@nuszjj from [中文版](/README.md))
 ## Project Introduction
 This project is aimed to build a set of blockchains with a new consensus protocol: Proof of network Dispersity, which could solve some common problems of existing POW and POS protocol to make it more environment friendly and fairer. On top of that, a series of blockchains with different tasks and functions will be established, necessary rewards will be distributed to developers within the protocol layer and simplify the business model of side-chain projects, which eventually makes this project as an open scalable system, and provides a safer, fairer and more flexible platform in the blockchain, especially cryptocurrency industry.<br>
-## Proof of network Dispersity
+## Proof of Network Dispersity
 *(Patent NO. CN2018102289423)*<br>
 ### Design Background
 My initial design intention is to find a proof of capability by making use of the network latency to realize POW-like consensus with low energy consumption.<br><br>
