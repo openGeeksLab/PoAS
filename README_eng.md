@@ -46,7 +46,7 @@ Figure 1: nodes & network scheme illustration<br>
 *(note: The trying frequency should be floating, refer to Chapter "[Frauds and attacks Article 1.](#anchor-11)" )*
 >9.	**After meeting the target of generating a block, a Miner packs all of the transactions received during the period above into a new block and broadcasts it. All of the referred transactions (coded within 6000 blocks in order to save some space), profits of all nodes and the other parameters should also be packed for verification. Mining rewards will be distributed between the Miner and all the participant Voters.**<br>
 *(note: Profits distribution strategy is discripted in Chapter "[Reward distribution](#reward-distribution)")*<br>
-*(note2: in terms of the extra storage space for validation parameters and reward distribution, it could be 2 more bites in the ID of each transaction and 4 more bites in the profit at maximum, which is fully acceptable; additional work of block validation is only going through the last 6000 blocks,  and it will not cause a bottleneck with proper algorithm.)*<br>
+*(note2: In terms of the extra storage space for validation parameters and reward distribution, it could be 4 more bytes in the ID and 4 more bytes in the profit of each transaction at maximum, which is fully acceptable; additional work of block validation is going through the last 6000 blocks, and it will not cause a bottleneck with proper algorithm.)*<br>
 
 <br>
 
