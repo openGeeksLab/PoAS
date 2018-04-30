@@ -13,7 +13,7 @@ Compared with "PoW" and "PoS", this model has the following benefit: <br>
 * **No hashpower competition and no high-energy-consumption;** [→](#anchor-02)
 * **No "nothing at stake" or "stake grinding" attack;**[→](#anchor-03)
 * **Provide enough incentives to maintain the network without the wealth concentration problem;**[→](#anchor-04)
-* **Provide an incentive for developers to build new projects which ensures the sustainability and extendibility of the system.**[→](#wallet-application)
+* **Provide an incentive for developers to build extend projects which ensures the sustainability and extendibility of the system.**[→](#wallet-application)
 * **The new way of mining competition helps change the environment of App or website development and improve the user experience of them.**[→](#anchor-05)<br>
 
 *(note: Because this article is only discussing the situation of fully decentralized systems, protocols like "PBFT", "DPOS", "Ripple" will not be involved.)*<br><br>
