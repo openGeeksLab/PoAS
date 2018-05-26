@@ -39,7 +39,7 @@ Fig. 1. Network scheme<br>
 >3.	**This transaction is validated and packed into a new block by another Miner. Then, the block is published to the network.**
 >4.	**When a Miner receives a new block, they begin to validate it. The Miner checks the “b” and “m” fields of each transaction simultaneously and marks transactions with an “x” when the “m” field point to the Miner and with a “y” when the “b” field matches the current chain’s tail-block.**
 >5.	**Each Voter’s stakes are divided equally among all of their transactions in that block.**
->6.	**The stakes of all transactions divided in the previous step are summed and marked with both “x” and “y” block by block until the Miner meets the requirement to generate a block. The result is denoted “X,” and the maximum number of accumulated blocks is the voting cycle (e.g., 6000 blocks).**<br>
+>6.	**The stakes of all transactions marked with both “x” and “y” divided in the previous step are summed block by block until the Miner meets the requirement to generate a block. The result is denoted “X,” and the maximum number of accumulated blocks is the voting cycle (e.g., 6000 blocks).**<br>
 *(note: The “x” mark means the vote of generating blocks; however, the “y” mark must also be checked. By doing so, nobody will obtain any reward if they select an incorrect branch, which motivates users to be more careful relative to branch selection.)*
 >7.	**The divided stakes of the transactions marked with “y” in the current block are summed, and the result is denoted “Y”.**<br>
 *(note: The "y" mark means the vote of the main chain and there will be some adjustment about "Y", refer to Chapter "[Frauds and attacks Article 2.](#anchor-12)" )*
