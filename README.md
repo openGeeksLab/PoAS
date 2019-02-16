@@ -15,7 +15,7 @@ The wealth distribution usually obeys the Pareto’s law as the following curve 
 <div align=left><img src="/res/3.0/q_003.png" width="70%" /></div>
     As shown above, the users owning less coins than w tend not to participate in the wealth redistribution, and they will be constantly “robbed” by the richer ones. As time goes on, the poorer users will eventually disappear. <br>
     Considering the factors influencing the value of w, there will be the following approximate equation:<br>
-w\*R *(Inflation Rate)* /(R+1) *(The wealth reduction)* = C *(Work cost)* ,<br>
+w \* R *(Inflation Rate)* /(R+1) *(The wealth reduction)* = C *(Work cost)* ,<br>
 that is : w=C\*(1+1/R)<br>
     So we have two ways to lower the value of w: decrease C (Work cost) or increase R (Inflation rate).<br>
     Our design works as the former way. We reduce the work cost of stakeholders from working fulltime to logging in once in between 100 hours. That reduces the work cost (and the value of w）to about one ten-thousandth of before. It makes the wealth distribution model of PoS systems more acceptable. In addition, since we have sharply reduced the value of C, we don’t have to increase the inflation rate to a fairly high level. <br>
