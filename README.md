@@ -1,58 +1,39 @@
-# 基于分散度证明协议的区块链项目
-([English Version](/README_eng_2.0.md))
-## 项目综述
-           本项目是希望用一种新的共识协议-网络分散度证明协议取代已有的PoW和PoS协议，修正现有共识协议的主要缺陷，实现更环保、更公平的加密数字货币底层协议。同时利用协议的特点在共识层面提供一种新的收益分配方式，给予钱包程序的开发者足够的激励，简化侧链项目的盈利模式，以去中心化的开发模式构造一系列基于跨链通信技术区块链，最终使本项目成为一个开放的可扩展系统，在加密数字货币领域为人们提供一个更安全、更公平和更灵活的平台。<br><br>
+# PoAS:A Stake-Based Blockchain Voting Consensus Protocol
+([Chinese Version](/README_cn.md))
+The design primarily deals with the major problems in the PoS system, providing a solution as systematically as possible.
 
-## 网络分散度证明协议（Proof of Network Dispersity）
-*(学术论文：[《网络分散度证明协议2.0》](/中文_researchpaper_2.0.pdf))*
-### 协议概述
-* **通过网络分散度的概念，提供一种新的能力验证方式；**
->因为网络延迟的缘故，分散在网络中的终端越多，他们共同收集网络中随机散布的信息的速度越快。而这也是一种“能力”的体现，我们称之为“网络分散度”
-><div align=left><img src="/res/2.0/charactors.jpg" width="70%" /></div>
->图1. 节点及网络结构示意图<br>
->如上图所示，工蜂节点更多的矿工，有更高的几率获得选票（权益）。<br>
+The main purpose of the study is to make PoS protocol more suitable for the use of cryptocurrency and become the mainstream protocol in the future.
 
-* **通过在交易中加入两次投票信息，以统计历史区块的方式，实现出块权的竞争和主链的共识。**
-><div align=left><img src="/res/2.0/vote_on_x.jpg" width="70%" /></div>
->图2. 出块权投票生效过程<br>
->如图所示，在已产生的若干区块中统计选票，获得选票（权益）最多的矿工节点将有最高的几率赢得出块权。<br>
-><div align=left><img src="/res/2.0/vote_on_y.jpg" width="70%" /></div>
->图3. 主链投票生效过程<br>
->如图所示，矿工节点会对所有分支进行投票，并记录在区块中，这些记录决定了各个分支所获得的选票（权益）多少，也就决定了分支的重量，最重的分支即为主链。<br>
+It can be summarized to the following points:
 
-### 优点
-本协议相对于PoS和PoW，具有以下优点：<br>
-1. 不存在算力竞赛，节约资源。<br>
-PoND的出块权竞争是基于权益属性和网络分散属性，两者都不需要消耗大量的社会资源。
-2. 不存在NaS(Nothing at Stake)导致的多重投票和历史攻击等缺陷。<br>
-这是抛弃高成本的算力竞赛之后必然带来的一个问题，也是PoS协议从诞生起就存在的缺陷。因为参与竞争不需要任何代价，用户可能在多个分支同时进行竞争，导致主链安全性降低，即多重投票问题；也可能在历史区块中的某个时间点重新构造出全新的分支，用以替换原有的分支，即历史攻击。这两者在PoND机制下都自然的得到了解决。
-3. 激励足够的竞争强度来维护网络的安全，同时不会陷入财富集中化和通货膨胀的问题。<br>
-PoND中权益持有者参与网络维护的成本比PoS中更低，更加常态化，这促使更多的低权益持有者参与到竞争中来，可以有效的避免财富集中化的问题。同时由于更多权益的参与，安全性会较PoS更高。而且由于极低的维护成本，系统给出的激励强度就可以相应的降低，避免出现类似于PoS系统不得不走向高通货膨胀率的尴尬局面。
-4. 具备最终性。<br>
-PoND具备最终性，以“保存点”的形式提供不可更改的账目。但不同于现有的其它最终性方案，我们并不增加额外的开销，也不存在特殊的节点，从去中心化的角度来说更加“优雅”。
-5. 激励开发者开发扩展项目，为系统的可持续性和可扩展性打下基础。<br>
-由于投票机制的特殊性，导致钱包应用在挖矿过程中占据很重要的特殊地位，这也使得钱包应用的分成模式更加清晰。已有的虚拟货币项目盈利模式仅限于发行之后等待币价提升，导致项目之间彼此孤立存在，跨链项目又难以为继，开发团队都在忙于发行，忽略了技术本身的价值。PoND则能够激励开发团队开发跨链项目，以一个稳定的核心货币为基础，开发具有独立特性的侧链项目，或者激励更多的开发团队在已有的链上开发更优秀的钱包应用，在钱包程序的去中心化上向前走了一步。
-6. 新的挖矿方式有丰富的潜在矿工资源作为储备。<br>
-在“网络分散度”能力上，众多网络开发者拥有天然的优势，只需要在现有的程序中做一些小的调整，即可加入矿工的行列，就像在网页中加入一个广告页面一样简单。这使得我们的区块链在启动难度上降低了很多，同时在可持续性和扩容方面具有优势。顺便提一下，如果能给开发者提供替代广告的收入途径，有可能会在提高程序的用户体验上做一些贡献。
+## 1. Wealth distribution 
+The wealth distribution usually obeys the Pareto’s law as the following curve shows:
+<div align=left><img src="/res/3.0/q_001.png" width="70%" /></div>
+    If everyone’s wealth grows at the same rate, the distribution will not change. As the green line shows:
+<div align=left><img src="/res/3.0/q_002.png" width="70%" /></div>
+    In the cryptocurrency world, an overall growth of coins means inflation. In PoS systems,
+inflation is an incentive for the stakeholders to work. They have to earn more coins by working in order to compensate the wealth reduction caused by the inflation. To approach the ideal curve (the green line), the ability of earning should depend on the number of coins they already have, or called stakes. It means that for some of the users who don’t have much coins, they also don’t have the ability to compensate the wealth reductions because their work costs are more than the reductions. Those users have to choose not to work and then lose their wealth gradually (assume that the total value of the coin is not changed). It is the basic wealth redistribution rule of PoS currencies. As the red line shows:
+<div align=left><img src="/res/3.0/q_003.png" width="70%" /></div>
+    As shown above, the users owning less coins than w tend not to participate in the wealth redistribution, and they will be constantly “robbed” by the richer ones. As time goes on, the poorer users will eventually disappear. 
+    Considering the factors influencing the value of w, there will be the following approximate equation:
+w\*R *(Inflation Rate)* /(R+1) *(The wealth reduction)* = C *(Work cost)* ,
+that is : w=C\*(1+1/R)
+    So we have two ways to lower the value of w: decrease C (Work cost) or increase R (Inflation rate).
+    Our design works as the former way. We reduce the work cost of stakeholders from working fulltime to logging in once in between 100 hours. That reduces the work cost (and the value of w）to about one ten-thousandth of before. It makes the wealth distribution model of PoS systems more acceptable. In addition, since we have sharply reduced the value of C, we don’t have to increase the inflation rate to a fairly high level. 
 
-## 出块速度
-           由于完全的去中心化，和比特币一样，我们在出块速度上也将受到限制。但是，和比特币不同的是，在此共识模式下，出块能力实际上是和网络响应速度密切相关的，出块几率大的矿工收到新块广播的时间也更短，而出块能力低的矿工即使延迟一些收到广播也没多大关系。此外，在主链认定上我们可以使用GHOST的最重分支策略，在产生孤块后更有效的抵御攻击。因此我们的共识周期一定会比比特币的更短一些（预计周期为60秒，以实验数据为准）。<br><br>
+## 2. Double voting and history attack
+Stakeholders participate in the wealth redistribution by handing over their stakes to the miners through an accumulating process, which will be introduced later.
+    The miner plays the role of working fulltime maintaining the network. The maintenance work includes two parts: generating blocks and voting for branches. I am going to explain the branch voting process here because it is related to the solution of the double voting problem which is one of the most well-known problems caused by “Nothing at Stake”.
+    Briefly speaking, the double voting problem is a strategy to vote on each fork of the chain. In PoAS systems, the miners cyclically vote for the current main branch and publish to the network as transactions which will be recorded in the next block. We ensure that the total voting information of every branch are recorded in each chain with an incentive mechanism (introduced in section 3.2.2). Thus, each vote will go public before it takes effect. Then through a specific method of counting (introduced in section 3.2.1), we guarantee that each stake will be counted no more than once no matter which part of the branch are counted. Therefore, there will be no space to make multiple votes.
+    Another major problem caused by NaS is the “history attacks”: the attacker rebuilds a new branch from a historical block trying to replace the original one. This is caused by the PoS consensus mechanism itself but we considered another aspect of it: the property of “Stake”. Unlike the other competition resources such as electricity, hashpower or storage space, stake is an inner state of the blockchains and therefore the total amount of stake is fixed. As it is introduced above, no multiple voting, we can easily conclude that a branch shouldn’t have any competitor if the stakes voted to it are more than half of the total stakes.
+<div align=left><img src="/res/3.0/q_004.png" width="70%" /></div>
+    As it is shown above, the stakes voted to the branch are more than the rest, then the root of this branch (with the red frame) will have no chance to be replaced, or to say, it’s finalized (introduced in section 3.2.1). The finalized block that we call save point limits the history attacks to its descendants, making the attacks much more difficult. There is another factor that helps out with the history attack problem but it will not be explained here (introduced in section 3.3).
+    
+## 3. Wallet applications
+Wallet applications usually don’t participate in the wealth distribution because they are not involved in the process of mining. But in PoAS, the wallet applications play an important role in the process of accumulating stakes which is the first stage of mining. So we distribute a part of the working reward to the wallets’ accounts (introduced in section 4.1), besides the wallets accumulate most of the transaction fee (introduced in section 5.1) which is not negligible because of the lower inflation rate. It will encourage the developers to be more active in making better wallet applications, which may be a progress of decentralization of development. Besides, it could encourage them to create sidechains because of the clearer profit model, which will be a progress of resolving the scalability problem.
 
-## 项目大体规划
-### 多链
-          区块链的去中心化程度决定了它的健壮性，但是去中心化程度同时限制了全网同步的速度，也就限制了出块速度，使得健壮性和交易通量成了区块链发展中两个互相矛盾的特性。另一方面，区块链的设计复杂度越高，它能实现的功能就越多，但是代码复杂的同时会带来更多的不安全因素。多链结构使用户能够将数据放到不同的链上去处理，满足不同的安全、功能和性能上的要求。但是以侧链为主的跨链通信技术由于对汇率的绑定等因素导致项目的盈利模式不够清晰，一直没有得到很好的应用。在PoND共识中，由于投票机制的引入使钱包账户的收入分成得以实现，这为侧链项目的发展提供了动力。希望由此会有更多的开发团队投入到侧链的开发中来，为整个系统健康成长提供新鲜血液。<br>
-### 前期规划
-           目前的计划是首先开发三个链，一个基本链用于提供最安全的虚拟货币资产保护和交易功能，一个支持智能合约的侧链和一个实现无第三方仲裁的兑换交易（详情请见《[去中心化交易所](https://github.com/yj1190590/backupDEX)》）的侧链。然后视团队情况和技术细节而定，可能优先开发支持高通量的小额交易链（因为有闪电网络的技术存在，交易通量需求的优先级会适当降低），以及完善一套接入标准，以方便和其他项目的对接，如前言中所说的那样，项目目标是要构造一个功能多样的可扩展的区块链族，能够方便的与不同开发者的不同项目之间实现价值传输是很有必要的。开放标准之后的主要任务就是对共识规则的完善，以方便其他开发者的加入，项目组会专注于开发一些特定功能的侧链项目，和所有开发者处于同等地位。<br><br>
-*(由于去中心交易所的专利还没有申请好，所以暂时还不便公开)*
+## 4 Accumulating process
+There are two ways of accumulating stakes: active voting and competition with network dispersity. The former one works like the delegated proof of stake: users have to choose the miners they already know about and vote their stake to them. The latter method works more objectively and needs less operations by user: miners compete with each other for votes using the ability called “Network dispersity”. Network dispersity is a concept that reflects how many dispersed units of an institution are distributed to the network, which is also the ability to grab random signals on the network. As a honeycomb works: the more workers working out there, the better chance they find a usable flower, a Miner with more online Gatherers has the better chance to find and win the vote from a ransom stakeholder. Because it is based on the network latencies which is inevitable and non-simulatable, network dispersity could be an objective resource for the miners to compete with.
+    It doesn’t affect the security or fairness no matter which way we choose to accumulate stakes because most of the stakes are owned by the richest users who will tend to accumulate their stakes by themselves and work alone.
 
-## 常见问题
-1.	问：这种体系利用了权益，那它算是PoS的变种吗？<br>
-答：从权益证明的角度来看可以这么理解，但是，虽然使用了权益，PoND的核心思想是利用网络的分散性来获取用户的投票，通过比较获得投票的能力来竞争，而不仅仅是利用权益大小来竞争。PoND在经过简化后可以得到PoS的效果，见[《网络分散度证明协议》](/中文_researchpaper_2.0.pdf)“PoS变种”小节。
-2.	问：如果矿工和用户合作，就能不使用网络延迟也能获得投票，那不是轻易的打破了这种竞争的公平性吗？<br>
-答：合作的方式确实能避开网络延迟的竞争，但是并没有打破公平性，因为从获取投票能力的角度来说，通过网络分散和通过合作都是一样的效果。见[《网络分散度证明协议》](/中文_researchpaper_2.0.pdf)“作弊和攻击”小节第2条。
-3.	问：如果有人集中了大量的用户，会不会对网络安全性造成影响？<br>
-答：我们从几个方面来回答。1.我们充分的保证矿工之间自由竞争，避免出现用户集中的情况，见[《网络分散度证明协议》](/中文_researchpaper_2.0.pdf)“争夺投票节点”和“钱包应用”小节；2.我们动态调节独立使用权益竞争的用户比例，保证即使出现用户非常集中的情况，也有足够的独立权益维持网络的安全，见[《网络分散度证明协议》](/中文_researchpaper_2.0.pdf)“争夺投票节点”和“挖矿奖励”小节。
-4.	问：既然是投票机制，那么和BFT类的投票协议区别在哪里？<br>
-答：首先BFT类的投票逻辑是“大多数人通过”而达成共识，PoND的投票是为了服务于“能者多得”的中本聪式共识逻辑，这是最本质的区别；其次BFT类的投票在少数验证节点之间进行，属于不完全的分布式系统，而PoND的投票是任意节点都可随时进行，属于完全分布式系统。
 
-<br>
