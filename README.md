@@ -20,9 +20,9 @@ As shown above, the users owning less coins than w tend not to participate in th
 
 Considering the factors influencing the value of w, there will be the following approximate equation:<br>
     
-w*R \*(Inflation Rate)* \/(R+1) *(The wealth reduction)* = C *(Work cost)* ,<br>
+w\*R *(Inflation Rate)* \/(R+1) *(The wealth reduction)* = C *(Work cost)* ,<br>
 
-that is : w=C\*(1+1/R)<br>
+that is : w=C\*(1+1\/R)<br>
 
 So we have two ways to lower the value of w: decrease C (Work cost) or increase R (Inflation rate).<br>
 
