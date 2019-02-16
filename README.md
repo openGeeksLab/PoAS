@@ -1,5 +1,5 @@
 # PoAS:A Stake-Based Blockchain Voting Consensus Protocol
-([Chinese Version](/README_cn.md))
+([Chinese Version](/README_cn.md)) <br>
 The design primarily deals with the major problems in the PoS system, providing a solution as systematically as possible.
 
 The main purpose of the study is to make PoS protocol more suitable for the use of cryptocurrency and become the mainstream protocol in the future.
