@@ -9,16 +9,24 @@ It can be summarized to the following points:
 ## 1. Wealth distribution 
 The wealth distribution usually obeys the Pareto’s law as the following curve shows:<br>
 <div align=left><img src="/res/3.0/q_001.png" width="70%" /></div>
-    If everyone’s wealth grows at the same rate, the distribution will not change. As the green line shows:<br>
+
+If everyone’s wealth grows at the same rate, the distribution will not change. As the green line shows:<br>
 <div align=left><img src="/res/3.0/q_002.png" width="70%" /></div>
-    In the cryptocurrency world, an overall growth of coins means inflation. In PoS systems, inflation is an incentive for the stakeholders to work. They have to earn more coins by working in order to compensate the wealth reduction caused by the inflation. To approach the ideal curve (the green line), the ability of earning should depend on the number of coins they already have, or called stakes. It means that for some of the users who don’t have much coins, they also don’t have the ability to compensate the wealth reductions because their work costs are more than the reductions. Those users have to choose not to work and then lose their wealth gradually (assume that the total value of the coin is not changed). It is the basic wealth redistribution rule of PoS currencies. As the red line shows:<br>
+
+In the cryptocurrency world, an overall growth of coins means inflation. In PoS systems, inflation is an incentive for the stakeholders to work. They have to earn more coins by working in order to compensate the wealth reduction caused by the inflation. To approach the ideal curve (the green line), the ability of earning should depend on the number of coins they already have, or called stakes. It means that for some of the users who don’t have much coins, they also don’t have the ability to compensate the wealth reductions because their work costs are more than the reductions. Those users have to choose not to work and then lose their wealth gradually (assume that the total value of the coin is not changed). It is the basic wealth redistribution rule of PoS currencies. As the red line shows:<br>
 <div align=left><img src="/res/3.0/q_003.png" width="70%" /></div>
-    As shown above, the users owning less coins than w tend not to participate in the wealth redistribution, and they will be constantly “robbed” by the richer ones. As time goes on, the poorer users will eventually disappear. <br>
-    Considering the factors influencing the value of w, there will be the following approximate equation:<br>
-w \* R *(Inflation Rate)* /(R+1) *(The wealth reduction)* = C *(Work cost)* ,<br>
+
+As shown above, the users owning less coins than w tend not to participate in the wealth redistribution, and they will be constantly “robbed” by the richer ones. As time goes on, the poorer users will eventually disappear. <br>
+
+Considering the factors influencing the value of w, there will be the following approximate equation:<br>
+    
+w*R \*(Inflation Rate)* \/(R+1) *(The wealth reduction)* = C *(Work cost)* ,<br>
+
 that is : w=C\*(1+1/R)<br>
-    So we have two ways to lower the value of w: decrease C (Work cost) or increase R (Inflation rate).<br>
-    Our design works as the former way. We reduce the work cost of stakeholders from working fulltime to logging in once in between 100 hours. That reduces the work cost (and the value of w）to about one ten-thousandth of before. It makes the wealth distribution model of PoS systems more acceptable. In addition, since we have sharply reduced the value of C, we don’t have to increase the inflation rate to a fairly high level. <br>
+
+So we have two ways to lower the value of w: decrease C (Work cost) or increase R (Inflation rate).<br>
+
+Our design works as the former way. We reduce the work cost of stakeholders from working fulltime to logging in once in between 100 hours. That reduces the work cost (and the value of w）to about one ten-thousandth of before. It makes the wealth distribution model of PoS systems more acceptable. In addition, since we have sharply reduced the value of C, we don’t have to increase the inflation rate to a fairly high level. <br>
 
 ## 2. Double voting and history attack
 Stakeholders participate in the wealth redistribution by handing over their stakes to the miners through an accumulating process, which will be introduced later.<br>
