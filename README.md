@@ -36,4 +36,5 @@ Wallet applications usually don’t participate in the wealth distribution becau
 There are two ways of accumulating stakes: active voting and competition with network dispersity. The former one works like the delegated proof of stake: users have to choose the miners they already know about and vote their stake to them. The latter method works more objectively and needs less operations by user: miners compete with each other for votes using the ability called “Network dispersity”. Network dispersity is a concept that reflects how many dispersed units of an institution are distributed to the network, which is also the ability to grab random signals on the network. As a honeycomb works: the more workers working out there, the better chance they find a usable flower, a Miner with more online Gatherers has the better chance to find and win the vote from a ransom stakeholder. Because it is based on the network latencies which is inevitable and non-simulatable, network dispersity could be an objective resource for the miners to compete with.
     It doesn’t affect the security or fairness no matter which way we choose to accumulate stakes because most of the stakes are owned by the richest users who will tend to accumulate their stakes by themselves and work alone.
 
-
+full paper: <br>
+[https://docdro.id/uanMOWk](https://docdro.id/uanMOWk)
