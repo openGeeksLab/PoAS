@@ -23,13 +23,15 @@ As shown above, the users owning less coins than w tend not to participate in th
 
 Considering the factors influencing the value of w, there will be the following approximate equation:<br>
 
-w\*R *(Inflation Rate)* \/(R+1) *(The wealth reduction)* = C *(Work cost)* ,<br>
+w\*R *(Inflation Rate)* \/(R+1) *(The wealth reduction)* = C *(Work cost)* - F *(Transaction fees acquired by working)*  ,<br>
 
-that is : w=C\*(1+1\/R)<br>
+that is : w=(C-F)\*(1+1\/R)<br>
 
-So we have two ways to lower the value of w: decrease C (Work cost) or increase R (Inflation rate).<br>
+So we have three ways to lower the value of w: increase F (Transaction fees), increase R (Inflation rate) or decrease C (Work cost).<br>
 
-Our design works as the former way. We reduce the work cost of stakeholders from working fulltime to logging in once in between 100 hours. That reduces the work cost (and the value of w）to about one ten-thousandth of before. It makes the wealth distribution model of PoS systems more acceptable. In addition, since we have sharply reduced the value of C, we don’t have to increase the inflation rate to a fairly high level. <br>
+Traditional PoS protocol works as the first way or the second way, which causes serious inflation or high transaction fees.<br>
+
+Our design works as the third way. We reduce the work cost of stakeholders from working fulltime to logging in once in between 100 hours. That reduces the work cost (and the value of w）to about one ten-thousandth of before. In addition, since we have sharply reduced the value of C, we don’t have to increase the inflation rate or the transaction fees to a fairly high level. It makes the wealth distribution model of PoS systems much more acceptable.<br>
 
 ## 2. Double voting and history attack
 Stakeholders participate in the wealth redistribution by handing over their stakes to the miners through an accumulating process, which will be introduced later.<br>
