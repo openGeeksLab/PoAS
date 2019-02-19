@@ -19,7 +19,7 @@ In the cryptocurrency world, an overall growth of coins means inflation. In PoS 
 
 <div align=left><img src="/res/3.0/q_003.png" width="70%" /></div>
 
-As shown above, the users owning less coins than w tend not to participate in the wealth redistribution, and they will be constantly “robbed” by the richer ones. As time goes on, the poorer users will eventually disappear.<br>
+As shown above, the users owning less coins than w tend not to participate in the wealth redistribution, and they will be constantly “robbed” by the richer ones. As time goes on, the poorer users will eventually disappear. The lower value w has, the more users will remain. <br>
 
 Considering the factors influencing the value of w, there will be the following approximate equation:<br>
 
