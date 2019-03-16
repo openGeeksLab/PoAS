@@ -55,7 +55,7 @@ There are two ways of accumulating stakes: active voting and competition with ne
 
 Network dispersity is a concept that reflects how many dispersed units of an institution are distributed to the network, which is also the ability to grab random signals on the network. As a honeycomb works: the more workers working out there, the better chance they find a usable flower, a Miner with more online Gatherers has better chance to find and win the vote from a random stakeholder. Because it is based on the network latencies which is inevitable and non-simulatable, network dispersity could be an objective resource for the miners to compete with.<br>
 
-It doesn’t affect the security or fairness no matter which way we choose to accumulate stakes because most of the stakes are owned by the richest users who will tend to accumulate their stakes by themselves and work alone.<br>
+It doesn’t affect the security or fairness no matter which way we choose to accumulate stakes because most of the stakes are owned by the richest users who will tend to be balanced. (introduced in section 5.2)<br>
 
 full paper: <br>
 [https://docdro.id/uanMOWk](https://docdro.id/uanMOWk)
