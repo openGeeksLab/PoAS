@@ -56,5 +56,5 @@ Network dispersity is a concept that reflects how many dispersed units of a grou
 
 It doesn’t affect the security or fairness no matter which way we choose to accumulate stakes because most of the stakes are owned by the richest users who will tend to be balanced. (introduced in section 5.2)<br>
 
-<a id="full_paper">full paper</a>: <br>
+<a id="full_paper"> **full paper** </a>: <br>
 [https://docdro.id/uanMOWk](https://docdro.id/uanMOWk)
