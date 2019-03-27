@@ -1,6 +1,6 @@
 # PoAS:A Stake-Based Blockchain Voting Consensus Protocol
 <!--([Chinese Version](/README_cn.md)) <br>-->
-The article primarily deals with the major problems of the PoS system trying to make it more suitable for the use of cryptocurrency and become the mainstream protocol in the future.
+The [article](#full_paper) primarily deals with the major problems of the PoS system trying to make it more suitable for the use of cryptocurrency and become the mainstream protocol in the future.
 
 It can be summarized to the following points:
 
@@ -56,5 +56,5 @@ Network dispersity is a concept that reflects how many dispersed units of a grou
 
 It doesn’t affect the security or fairness no matter which way we choose to accumulate stakes because most of the stakes are owned by the richest users who will tend to be balanced. (introduced in section 5.2)<br>
 
-full paper: <br>
+<a id="full_paper">full paper</a>: <br>
 [https://docdro.id/uanMOWk](https://docdro.id/uanMOWk)
