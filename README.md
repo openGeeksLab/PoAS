@@ -1,6 +1,6 @@
 # PoAS:A Stake-Based Blockchain Voting Consensus Protocol
 <!--([Chinese Version](/README_cn.md)) <br>-->
-The [article](#full_paper) primarily deals with the major problems of the PoS system trying to make it more suitable for the use of cryptocurrency and become the mainstream protocol in the future.
+The [paper](#full_paper) primarily deals with the major problems of the PoS system trying to make it more suitable for the use of cryptocurrency and become the mainstream protocol in the future.
 
 It can be summarized to the following points:
 
